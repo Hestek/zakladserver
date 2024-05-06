@@ -12,7 +12,13 @@ namespace actualserver
     {
         static void Main(string[] args)
         {
-            WebSocketServer wssv = new WebSocketServer("ws://127.0.0.1");
+            WebSocketServer wssv = new WebSocketServer("ws://127.0.0.1:7890");
+
+            wssv.Start();
+            Console.WriteLine("server se zapnul");
+
+            Console.ReadKey();
+            wssv.Stop();
         }
     }
 }
